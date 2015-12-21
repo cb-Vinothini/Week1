@@ -1,3 +1,5 @@
+package Pattern;
+
 public class Pattern{
   public static void main(String[] agrs){
     int num = 5;
