@@ -40,7 +40,7 @@ class Book{
         StringBuffer output = new StringBuffer(String.format("%s by ",name));
         Iterator<Author> authorIterator = aithors.iterator();
         while(authorIterator.hasNext()){
-            output.append(author.toDisplay());
+            output.append(authorIterator.next().toDisplay());
         }
         output.append(String.format("Price : %f and number of books available : %d",price,qtyInStock));
         return output.toString();

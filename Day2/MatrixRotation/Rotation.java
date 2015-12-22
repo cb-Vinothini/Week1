@@ -1,8 +1,10 @@
+package MatrixRotation;
+
 import java.util.Scanner;
 
 public class Rotation{
   public static void main(String[] args){
-    MatrixOperation matrix = new MatrixOperation();
+    MatrixOperation matrix = new MatrixOperation(args);
     matrix.display();
     Scanner scanner = new Scanner(System.in);
     System.out.print("enter L - to rotate left  or R - to rotate right : ");
@@ -23,8 +25,19 @@ public class Rotation{
 }
 
 class MatrixOperation{
-  int[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
-  int row = 3, col = 3;
+  int[][] mat;
+  int row, col;
+    MatrixOperation(String[] argument){
+        this.row = Integer.parseInt(argument[0]);
+        this.col = Integer.parseInt(argument[1]);
+        int next = 2;
+        mat = new int[row][col];
+        for( int rowFill =0; rowFill<row; rowFill++){
+            for(int colFill = 0; colFill<col;colFill++){
+                mat[rowFill][colFill] = Integer.parseInt(argument[next++]);
+            }
+        }
+    }
   void transpose(){
     for (int out = 0; out < row ; out++) {
       for (int in = out; in < col; in++) {

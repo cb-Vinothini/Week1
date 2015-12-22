@@ -1,3 +1,5 @@
+package Fibonacci;
+
 import java.util.Scanner;
 
 public class FiboGeneration{
@@ -5,19 +7,20 @@ public class FiboGeneration{
     System.out.print("Enter the number of terms: ");
     Scanner scanner = new Scanner(System.in);
     int count = scanner.nextInt();
-    int first_term = 0, second_term = 1, next_term;
+    int firstTerm = 0, secondTerm = 1, nextTerm;
 
-    System.out.print("First "+"count"+" terms of Fibonacci series : ");
+    String output = String.format("First %d terms of Fibonacci series : ", count);
+      System.out.print(output);
     for ( int index = 0 ; index < count ; index++ ){
        if ( index <= 1 )
-          next_term = index;
+          nextTerm = index;
        else
        {
-          next_term = first_term + second_term;
-          first_term = second_term;
-          second_term = next_term;
+          nextTerm = firstTerm + secondTerm;
+          firstTerm = secondTerm;
+          secondTerm = nextTerm;
        }
-       System.out.print(next_term+" ");
+       System.out.print(nextTerm+" ");
     }
     System.out.println();
   }

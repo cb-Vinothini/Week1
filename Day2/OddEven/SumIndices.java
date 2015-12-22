@@ -1,3 +1,5 @@
+package OddEven;
+
 import java.util.Scanner;
 
 public class SumIndices{
@@ -11,7 +13,7 @@ public class SumIndices{
     int sum = 0;
     for(int index = 0 ; index<string.length(); index++){
       char ch = string.charAt(index);
-      sum = sum + ch - 64;
+      sum = sum + ch;
     }
     if(sum%2 == 0){
       System.out.println("Even");

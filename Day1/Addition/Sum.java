@@ -1,13 +1,15 @@
 package Addition;
+
 /**
 * Sum class implemented to carry out the addition operation
 */
 public class Sum{
   public static void main(String[] args){
     int FirstNumber, SecondNember; // variable to store two numbers
-    FirstNumber = 10;
-    SecondNember = 20;
-    System.out.println("sum of 10+20 = "+Sum.addToNumbers(FirstNumber,SecondNember));
+    FirstNumber = Integer.parseInt(args[0]);
+    SecondNember = Integer.parseInt(args[1]);
+    String output = String.format("sum of %d + %d = %d", FirstNumber, SecondNember,Sum.addToNumbers(FirstNumber,SecondNember));
+    System.out.println(output);
     // Display their sum
   }
 

@@ -1,3 +1,5 @@
+package PrintSmallLarge;
+
 import java.util.Scanner;
 
 public class SmallLarge{
@@ -20,6 +22,7 @@ public class SmallLarge{
         max=intArr[index];
       }
     }
-    System.out.print("min and max are : "+min+" ,"+max);
+      String output = String.format("min and max are : %d %d \n",min,max);
+    System.out.print(output);
   }
 }

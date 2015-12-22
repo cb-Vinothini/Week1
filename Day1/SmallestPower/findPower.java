@@ -4,13 +4,14 @@ public class findPower{
   /*
   *program execution starts here
   */
-  public static void main(String[] agrs){
+  public static void main(String[] args){
     Operation operation = new Operation();
     int firstNum, secondNum;
-    firstNum = 9;
-    secondNum = 60;
+    firstNum = Integer.parseInt(args[0]);
+    secondNum = Integer.parseInt(args[1]);
     int smallPower = operation.SmallestPower(firstNum, secondNum); //compute the smallest power
-    System.out.println("smalles power of "+firstNum+" greater than "+secondNum +" is : "+ smallPower);
+    String output = String.format("smalles power of %d greater than %d is : %d ",firstNum, secondNum, smallPower);
+    System.out.println(output);
   }
 }
 /**
