@@ -25,7 +25,7 @@ public class Author{
         return gender;
     }
     public String toDisplay(){
-        String output = String.format("%s %c at %s",name, gender, email);
+        String output = String.format("%s %c at %s\n",name, gender, email);
         return output;
     }
     public static void main(String[] args){

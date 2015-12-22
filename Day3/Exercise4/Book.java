@@ -1,14 +1,17 @@
 
 package Exercise4;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 class Book{
     private String name;
     private ArrayList<Author> authors;
     private double price;
     private int qtyInStock = 0;
-    public Book(String name, Author[] authors, double price, int qtyInStock){
+    public Book(String name, ArrayList<Author> authors, double price, int qtyInStock){
         this.name = name;
-        authors.addAll(authors);
+        this.authors = authors;
         this.price = price;
         this.qtyInStock = qtyInStock;
     }
@@ -38,7 +41,7 @@ class Book{
     }
     public String toDisplay(){
         StringBuffer output = new StringBuffer(String.format("%s by ",name));
-        Iterator<Author> authorIterator = aithors.iterator();
+        Iterator<Author> authorIterator = authors.iterator();
         while(authorIterator.hasNext()){
             output.append(authorIterator.next().toDisplay());
         }
@@ -46,9 +49,21 @@ class Book{
         return output.toString();
     }
     public void printAuthors(){
-        for(author in authors){
-            String.format("%s %c at %s",author.getName(), author.getGender(), author.getEmail());
+        for(Author author : authors){
+            String.format("%s %c at %s\n",author.getName(), author.getGender(), author.getEmail());
         }
     }
-    
+    public void addAuthors(Author author){
+        authors.add(author);
+    }
+    public static void main(String[] args){
+        Author author = new Author("R.K. Narayan", "rknarayan@gmail.com", 'M');
+        ArrayList<Author> manyAuthor = new ArrayList<Author>();
+        manyAuthor.add(author);
+        manyAuthor.add(author);
+        manyAuthor.add(author);
+        Book book = new Book("XYZ", manyAuthor, 500, 3);
+        book.addAuthors(author);
+        System.out.println(book.toDisplay());
+    }
 }
