@@ -23,9 +23,11 @@ public class ServiceStation{
         Invoice invoice1 = new Invoice(cust1, bike, emp1);
         Invoice invoice2 = new Invoice(cust2, car, emp3);
         Invoice invoice3 = new Invoice(cust1, bus, emp2);
+        
+        ServiceStation.displayVehicles(vehicles);
     }
     
-    void displayVehicles(ArrayList<Vehicle> vehicles){
+    static void displayVehicles(ArrayList<Vehicle> vehicles){
         Iterator<Vehicle> vehicleIterator = vehicles.iterator();
         while(vehicleIterator.hasNext()){
             vehicleIterator.next().displayServiceCharge();
