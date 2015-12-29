@@ -61,7 +61,10 @@ class Factorial implements Iterable{
 
 public class InnerClassDemo{
     public static void main(String[] args){
-        Factorial factorial = new Factorial(1,4);
+        int lowerLimit, upperLimit;
+        lowerLimit = Integer.parseInt(args[0]);
+        upperLimit = Integer.parseInt(args[1]);
+        Factorial factorial = new Factorial(lowerLimit, upperLimit);
         System.out.println(factorial.toString());
     }
 }
