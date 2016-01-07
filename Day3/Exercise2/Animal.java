@@ -8,13 +8,15 @@ public class Animal{
     int numberOfLegs;
     String name;
     public Animal(int numberOfLegs, String name){
-        countAnimals++;
         this.numberOfLegs = numberOfLegs;
         this.name = name;
+        countAnimals++;
     }
+
     public void displayCount(){
         System.out.println("Number of Animals Created : "+countAnimals);
     }
+    
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         char choice;

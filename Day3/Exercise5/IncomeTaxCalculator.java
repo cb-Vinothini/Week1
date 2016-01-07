@@ -2,13 +2,14 @@ package Exercise5;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.List;
 
 public class IncomeTaxCalculator{
     public static void main(String[] args){
         Employee emp1 = new Employee("emp1", 12345, 100000, 'F');
         Employee emp2 = new Employee("emp2", 12345, 200000, 'M');
         Employee emp3 = new Employee("emp3", 12345, 900000, 'F');
-        ArrayList<Employee> emps = new ArrayList<Employee>();
+        List<Employee> emps = new ArrayList<Employee>();
         emps.add(emp1);
         emps.add(emp2);
         emps.add(emp3);
@@ -45,10 +46,10 @@ public class IncomeTaxCalculator{
         return tax;
     }
     
-    public void displayAllEmp(ArrayList<Employee> emps){
+    public void displayAllEmp(List<Employee> emps){
         for(Employee emp : emps){
-            String output = String.format("Name : %s, gender: %c panNumber : %d income: %f tax : %f \n",emp.getEmpName(), emp.getGender(), emp.getPanNumber(), emp.getIncome(), emp.getTax());
-            System.out.println(output);
+            //String output = String.format("Name : %s, gender: %c panNumber : %d income: %f tax : %f \n",emp.getEmpName(), emp.getGender(), emp.getPanNumber(), emp.getIncome(), emp.getTax());
+            System.out.println(emp.display());//output);
         }
     }
 }

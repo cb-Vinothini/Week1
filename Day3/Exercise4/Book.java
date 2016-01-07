@@ -3,13 +3,15 @@ package Exercise4;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.util.List;
 
 class Book{
     private String name;
-    private ArrayList<Author> authors;
+    private List<Author> authors = new ArrayList<Author>();
     private double price;
     private int qtyInStock = 0;
-    public Book(String name, ArrayList<Author> authors, double price, int qtyInStock){
+    public Book(String name, List<Author> authors, double price, int qtyInStock){
         this.name = name;
         this.authors = authors;
         this.price = price;
@@ -24,7 +26,7 @@ class Book{
     public String getName(){
         return name;
     }
-    public ArrayList<Author> getAuthors(){
+    public List<Author> getAuthors(){
         return authors;
     }
     public double getPrice(){
@@ -50,15 +52,28 @@ class Book{
     }
     public void printAuthors(){
         for(Author author : authors){
-            String.format("%s %c at %s\n",author.getName(), author.getGender(), author.getEmail());
+            author.toDisplay();
+            //String.format("%s %c at %s\n",author.getName(), author.getGender(), author.getEmail());
         }
     }
     public void addAuthors(Author author){
         authors.add(author);
     }
+    
+    public static Author setAuthor(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter author name : ");
+        String name = scanner.next();
+        System.out.print("Enter author email : ");
+        String email = scanner.next();
+        System.out.print("Enter author gender : ");
+        char gender = scanner.next().charAt(0);
+        return new Author(name, email, gender);
+    }
+    
     public static void main(String[] args){
-        Author author = new Author("R.K. Narayan", "rknarayan@gmail.com", 'M');
-        ArrayList<Author> manyAuthor = new ArrayList<Author>();
+        Author author = Book.setAuthor();
+        List<Author> manyAuthor = new ArrayList<Author>();
         manyAuthor.add(author);
         manyAuthor.add(author);
         manyAuthor.add(author);

@@ -9,4 +9,21 @@ public class Invoice{
         this.vehicle = vehicle;
         this.employee = employee;
     }
+    
+    public Person getCustomer(){
+        return customer;
+    }
+    
+    public Person getEmployee(){
+        return employee;
+    }
+    
+    public Vehicle getVehicle(){
+        return vehicle;
+    }
+    
+    public void display(){
+        ((Employee)employee).displayEmployee();
+        ((Customer)customer).displayCustomer();
+    }
 }

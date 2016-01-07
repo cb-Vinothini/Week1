@@ -1,15 +1,7 @@
 package Exercise3;
 
 import java.lang.StringBuilder;
-
-interface Iterator{
-    boolean hasNext();
-    int next();
-}
-
-interface Iterable{
-    Iterator iterator();
-}
+import java.util.Iterator;
 
 class Factorial implements Iterable{
     private int lowerLimit, upperLimit;
@@ -18,8 +10,9 @@ class Factorial implements Iterable{
     @Override
     public String toString(){
         StringBuilder output = new StringBuilder();
-        for(int index = 0; index < factorials.length; index++){
-            output.append(factorials[index]);
+        Iterator iterator = this.iterator();
+        for(; iterator.hasNext();){
+            output.append(iterator.next());
             output.append(", ");
         }
         return output.toString();
@@ -28,6 +21,10 @@ class Factorial implements Iterable{
     @Override
     public Iterator iterator(){
         return new FactorialIterator();
+    }
+    
+    Factorial(){
+        
     }
     
     Factorial(int lowerLimit, int upperLimit){
@@ -52,7 +49,7 @@ class Factorial implements Iterable{
         }
         
         @Override
-        public int next(){
+        public Integer next(){
             return factorials[index++];
         }
 
@@ -65,6 +62,6 @@ public class InnerClassDemo{
         lowerLimit = Integer.parseInt(args[0]);
         upperLimit = Integer.parseInt(args[1]);
         Factorial factorial = new Factorial(lowerLimit, upperLimit);
-        System.out.println(factorial.toString());
+        System.out.println(factorial);
     }
 }

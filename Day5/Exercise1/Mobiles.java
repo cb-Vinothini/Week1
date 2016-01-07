@@ -26,6 +26,10 @@ public class Mobiles{
                 Random random = new Random();
                 remainingCharge = random.nextInt(100);
             }
+            
+            public void show(){
+                System.out.println("show");
+            }
         };
         
         Mobile samsung = new Mobile("SAMSUNG"){
@@ -37,6 +41,8 @@ public class Mobiles{
         };
 
         nokia.print();
+        nokia.show();
+        
         samsung.print();
     }
 }
