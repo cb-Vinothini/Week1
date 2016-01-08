@@ -28,12 +28,14 @@ public class ServiceStation{
         vehicles.add(bus);
         
         Invoice invoice1 = invoiceFactory.getInstanceInvoice(cust1, bike, emp1);
-        System.out.println("point");
         Invoice invoice2 = invoiceFactory.getInstanceInvoice(cust2, car, emp3);
         Invoice invoice3 = invoiceFactory.getInstanceInvoice(cust1, bus, emp2);
         
+        System.out.println("--------Listing all vehicle details-------");
         ServiceStation.displayVehicles(vehicles);
+        System.out.println("-------Listing all employee invoice details-------");
         ServiceStation.displayEmployee(employee);
+        System.out.println("-------Listing all customer invoice details-------");
         ServiceStation.displayCustomer(customer);
     }
     
@@ -46,12 +48,14 @@ public class ServiceStation{
     
     static void displayEmployee(ArrayList<Person> employees){
         for(Person employee: employees){
+            System.out.println("Emp name : "+employee.getName());
             employee.displayInvoice();
         }
     }
 
     static void displayCustomer(ArrayList<Person> customers){
         for(Person customer: customers ){
+            System.out.println("Cust name : "+customer.getName());
             customer.displayInvoice();
         }
     }
